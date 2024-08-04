@@ -102,7 +102,7 @@ public class libroController {
 	        libro.setIsbn(libroUpdate.getIsbn());
 	        libro.setGenero(libroUpdate.getGenero());
 	        libro.setCant_Dis(libroUpdate.getCant_Dis());
-	        libro.setCant_Ocup(libroUpdate.getCant_Dis());
+	        libro.setCant_Ocup(libroUpdate.getCant_Ocup());
 	        
 	        libroService.save(libro);
 	        return new ResponseEntity<>("Guardado", HttpStatus.OK);
