@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".guardarLibro">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <TextView
+            android:id="@+id/lbltitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblTitulo" />
+
+        <EditText
+            android:id="@+id/txt_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/lblautor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblAutor" />
+
+        <EditText
+            android:id="@+id/txt_autor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/lblgenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblGenero" />
+
+        <EditText
+            android:id="@+id/txt_genero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/lblcod_isbn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblCodigoISBN" />
+
+        <EditText
+            android:id="@+id/txt_cod_isbn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/lblcant_dis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblLibrosDisponibles" />
+
+        <EditText
+            android:id="@+id/txt_cant_disp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/lblcant_ocup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblLibrosOcupados" />
+
+        <EditText
+            android:id="@+id/txt_cant_ocup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginTop="50dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#F0E65151"
+                android:text="@string/btnVolver"
+                android:textColor="#ffffff"
+                app:icon="@drawable/arrow_left"
+                app:iconGravity="start"
+                app:iconPadding="8dp"
+                app:iconTint="#ffffff" />
+
+
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#980000"
+                android:text="@string/btnGuardar"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

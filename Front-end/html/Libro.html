@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="shortcut icon" href="../img/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body onload="listaLibro();">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 bg-dark sidebar">
+                <div class="sidebar-heading text-light pt-3 mb-4 custom-blue">
+                    <img src="/Front-end/img/Logo.png" class="mr-2" style="height: 100px;"><h1 style="font-size: 40px;">BiblioStock</h1>
+                </div>
+                <ul class="list-unstyled" style="margin-left: 30px;">
+                    <li class=""><a href="../index.html" class="text-light"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="opcion2"><a href="./Libro.html" class="text-light"><i class="fas fa-book"></i> Libros</a></li>
+                    <li><a href="../html/Prestamo.html" class="text-light"><i class="fas fa-exchange-alt"></i> Prestamos</a></li>
+                    <li><a href="../html/Usuario.html" class="text-light"><i class="far fa-user"></i>  Usuario</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <h1 class="mt-3">Libro</h1>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="SearchName">Filtrar:</label>
+                            <input type="search" class="form-control" id="SearchName" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <button type="button" class="btn btn-primary mr-2" onclick="listaLibro()">Aplicar Filtros</button>
+                        <button type="button" class="btn btn-secondary" onclick="limpiarFiltros()">Limpiar Filtros</button>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <a href="../html/registrarLibro.html"><button type="button" class="btn btn-success">Añadir Libro</button></a>
+                    </div>
+                </div>
+                <hr> <!-- Línea horizontal debajo de los botones -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead> 
+                                <tr>
+                                    <th>ID_Libro</th>
+                                    <th>Titulo</th>
+                                    <th>Autor</th>
+                                    <th>Genero</th>
+                                    <th>Isbn</th>
+                                    <th>Ejemplares disponibles</th>
+                                    <th>Ejemplares ocupados</th>
+                                    <th id="headerAcciones">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cuerpoTabla">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar libro -->
+<div class="modal fade" id="modalLibro" tabindex="-1" role="dialog" aria-labelledby="modalLibroLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLibroLabel">Editar Libro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formEditarLibro">
+                    <div class="form-group">
+                        <label for="editTitulo">Título:</label>
+                        <input type="text" class="form-control" id="editTitulo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editAutor">Autor:</label>
+                        <input type="text" class="form-control" id="editAutor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editGenero">Género:</label>
+                        <select class="form-control" id="editGenero" required>
+                            <option selected disabled>Seleccione el tipo de genero:</option>
+                                    <option value="aventura">aventura</option>
+                                    <option value="biografia">biografia</option>
+                                    <option value="ciencia_ficcion">ciencia ficcion</option>
+                                    <option value="crimen">crimen</option>
+                                    <option value="drama">drama</option>
+                                    <option value="ensayo">ensayo</option>
+                                    <option value="fantasia">fantasia</option>
+                                    <option value="historico">historico</option>
+                                    <option value="humor">humor</option>
+                                    <option value="infantil">infantil</option>
+                                    <option value="juvenil">juvenil</option>
+                                    <option value="misterio">misterio</option>
+                                    <option value="novela_negra">novela negra</option>
+                                    <option value="poesia">poesia</option>
+                                    <option value="romance">romance</option>
+                                    <option value="suspense">suspense</option>
+                                    <option value="terror">terror</option>
+                                    <option value="thriller">thriller</option>
+                                    <option value="accion">accion</option>
+                                    <option value="amor">amor</option>
+                                    <option value="cuento">cuento</option>
+                                    <option value="didactico">didactico</option>
+                                    <option value="distopia">distopia</option>
+                                    <option value="epico">epico</option>
+                                    <option value="erotico">erotico</option>
+                                    <option value="fabula">fabula</option>
+                                    <option value="filosofico">filosofico</option>
+                                    <option value="guerra">guerra</option>
+                                    <option value="legal">legal</option>
+                                    <option value="lirico">lirico</option>
+                                    <option value="musical">musical</option>
+                                    <option value="naturalista">naturalista</option>
+                                    <option value="periodistico">periodistico</option>
+                                    <option value="psicologico">psicologico</option>
+                                    <option value="realista">realista</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editIsbn">ISBN:</label>
+                        <input type="number" class="form-control" id="editIsbn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCant_Dis">Ejemplares Disponibles:</label>
+                        <input type="number" class="form-control" id="editCant_Dis" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCant_Ocup">Ejemplares Ocupados:</label>
+                        <input type="number" class="form-control" id="editCant_Ocup" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/libro.js"></script>
+</body>
+</html>

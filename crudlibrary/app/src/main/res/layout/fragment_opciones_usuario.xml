@@ -1,0 +1,61 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F3F3"
+    tools:context=".opciones_usuario">
+
+    <Button
+        android:id="@+id/NuevoUsuario"
+        android:layout_width="149dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Nuevo usuario"
+        android:textAlignment="center"
+        app:icon="@drawable/add"
+        app:iconGravity="top"
+        app:iconPadding="0dp"
+        app:iconSize="60dp"
+        app:iconTint="#ffff"
+        app:layout_constraintEnd_toStartOf="@+id/ListaUsuario"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/ListaUsuario"
+        android:layout_width="149dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Lista usuario"
+        android:textAlignment="center"
+        app:icon="@drawable/lista_icon"
+        app:iconGravity="top"
+        app:iconPadding="0dp"
+        app:iconSize="50dp"
+        app:iconTint="#ffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/NuevoUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="40dp"
+        android:text="Usuario"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/NuevoUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
