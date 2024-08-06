@@ -1,5 +1,103 @@
 var url = "http://localhost:8080/api/v1/libro/";
 
+//Designamos a que campo queremos que vayan los ciertos caracteres
+document.getElementById("Titulo").addEventListener("keypress",tituloLibro);
+document.getElementById("Autor").addEventListener("keypress",soloLetras);
+document.getElementById("Genero").addEventListener("keypress",soloLetras);
+document.getElementById("Isbn").addEventListener("keypress",soloNumeros);
+document.getElementById("Cant_Dis").addEventListener("keypress",soloNumeros);
+document.getElementById("Cant_Ocup").addEventListener("keypress",soloNumeros);
+
+
+function soloLetras(event){
+  console.log("Llave presionada: "+event.key);
+  console.log("Código tecla: "+event.keyCode);
+  
+  const letrasPermitidas=[
+    //letras en minúsculas
+    "a","b","c","d","e","f","g","h","i","j","k","l","m","n","p","q","r","s","t","u","v","x","y","w","o","z","ñ","Ñ",
+    //LETRAS EN MAYÚSCULAS
+    "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z", " ",
+    //letras con tildes, mayusculas y minusculas
+    "á",  "é",  "í",  "ó",  "ú",  "Á",  "É",  "Í",  "Ó",  "Ú"
+
+  ];
+  const numeroPermitidos=[
+    '1', '2', '3','4','5','6','7','8','9','0'
+  ];
+  const caracteresPermitidos=[
+    '@','_','-','.'
+  ];
+
+
+  if (!(letrasPermitidas.includes(event.key))){
+    event.preventDefault();
+    return;
+  }
+}
+
+//función para que el titulo del libro permita solamente numeros y letras
+function tituloLibro(event){
+  console.log("Llave presionada: "+event.key);
+  console.log("Código tecla: "+event.keyCode);
+  
+  const letrasPermitidas=[
+    //letras en minúsculas
+    "a","b","c","d","e","f","g","h","i","j","k","l","m","n","p","q","r","s","t","u","v","x","y","w","o","z","ñ","Ñ",
+    //LETRAS EN MAYÚSCULAS
+    "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z", " ",
+    //letras con tildes, mayusculas y minusculas
+    "á",  "é",  "í",  "ó",  "ú",  "Á",  "É",  "Í",  "Ó",  "Ú"
+
+  ];
+  const numeroPermitidos=[
+    '1', '2', '3','4','5','6','7','8','9','0'
+  ];
+  const caracteresPermitidos=[
+    '@','_','-','.'
+  ];
+
+
+  if (
+    !(letrasPermitidas.includes(event.key)) &&
+    !(numeroPermitidos.includes(event.key))
+  ){
+    event.preventDefault();
+    return;
+  }
+
+
+}
+
+function soloNumeros(event){
+  console.log("Llave presionada: "+event.key);
+  console.log("Código tecla: "+event.keyCode);
+  
+  const letrasPermitidas=[
+    //letras en minúsculas
+    "a","b","c","d","e","f","g","h","i","j","k","l","m","n","p","q","r","s","t","u","v","x","y","w","o","z","ñ","Ñ",
+    //LETRAS EN MAYÚSCULAS
+    "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z", " ",
+    //letras con tildes, mayusculas y minusculas
+    "á",  "é",  "í",  "ó",  "ú",  "Á",  "É",  "Í",  "Ó",  "Ú"
+
+  ];
+  const numeroPermitidos=[
+    '1', '2', '3','4','5','6','7','8','9','0'
+  ];
+  const caracteresPermitidos=[
+    '@','_','-','.'
+  ];
+
+
+  if (!(numeroPermitidos.includes(event.key))){
+    event.preventDefault();
+    return;
+  }
+}
+
+
+
 function listaLibro() {
     var capturarFiltro = document.getElementById("SearchName").value;
     var urlLocal = url;
@@ -242,10 +340,10 @@ function registrarLibro() {
         });
         return;
     }
-    if (isbn === "" || isNaN(isbn) || parseInt(isbn) < 0) {
+    if (isbn === "" || isNaN(isbn) || parseInt(isbn) < 0 || isbn.length !== 13) {
         Swal.fire({
             title: "Error",
-            text: "Por favor, ingrese un número válido de ISBN que no sea negativo.",
+            text: "Por favor, ingrese un ISBN válido de 13 dígitos.",
             icon: "error"
         });
         return;
