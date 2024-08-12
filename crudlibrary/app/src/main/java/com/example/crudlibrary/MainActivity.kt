@@ -23,19 +23,35 @@ class MainActivity : AppCompatActivity() {
         var btnLibro =
             findViewById<Button>(R.id.btnLibro)
 
+        var btnNuevoLibro =
+            findViewById<Button>(R.id.btnNuevoLibro)
+
+        var btndetalleLibro =
+            findViewById<Button>(R.id.btnDetalleLibro)
 
         btnLibro.setOnClickListener {
             crudlibrary(1)
         }
+
+        btnNuevoLibro.setOnClickListener {
+            crudlibrary(2)
+        }
+
+        btndetalleLibro.setOnClickListener {
+            crudlibrary(3)
+        }
+
 
 
     }
 
     private fun crudlibrary(position: Int) {
         val fragment: Fragment = when (position) {
-            1 -> guardarLibro()
+            1 -> listaLibro()
+            2 -> guardarLibro()
+            3 -> detalleLibro()
 
-            else -> guardarLibro()
+            else -> listaLibro()
         }
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()

@@ -10,7 +10,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/FCV"
-        android:name="com.example.crudlibrary.opcionesLibro"
+        android:name="com.example.crudlibrary.listaLibro"
         android:layout_width="391dp"
         android:layout_height="610dp"
         android:layout_marginTop="4dp"
@@ -86,16 +86,16 @@
             android:layout_height="match_parent" />
 
         <Button
-            android:id="@+id/btnUsuario"
+            android:id="@+id/btnNuevoLibro"
             android:layout_width="0dp"
             android:layout_height="76dp"
             android:layout_weight="1"
             android:backgroundTint="#FFFFFF"
             android:gravity="center"
-            android:text="Usuario"
+            android:text="Nuevo"
             android:textAlignment="center"
             android:textColor="#000000"
-            app:icon="@drawable/user"
+            app:icon="@drawable/book_check_svgrepo_com"
             app:iconGravity="top"
             app:iconSize="24dp"
             app:iconTint="#000000" />
@@ -105,13 +105,13 @@
             android:layout_height="match_parent" />
 
         <Button
-            android:id="@+id/btnPrestamo"
+            android:id="@+id/btnDetalleLibro"
             android:layout_width="0dp"
             android:layout_height="76dp"
             android:layout_weight="1"
             android:backgroundTint="#FFFFFF"
             android:gravity="center"
-            android:text="Préstamo"
+            android:text="Detalle"
             android:textAlignment="center"
             android:textColor="#000000"
             app:icon="@drawable/arrows"

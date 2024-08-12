@@ -80,7 +80,7 @@ class detalleLibro : Fragment() {
         lblcant_dis = view.findViewById(R.id.lblcant_dis)
         lblcant_ocup = view.findViewById(R.id.lblcant_ocup)
 
-        btnEditar = view.findViewById(R.id.btnEditar)
+
         btnEditar.setOnClickListener { editarLibro() }
         btnEliminar = view.findViewById(R.id.btnEliminar)
         btnEliminar.setOnClickListener { eliminarLibro() }

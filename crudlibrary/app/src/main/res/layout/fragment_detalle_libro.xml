@@ -62,13 +62,6 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnEditar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/btnVolver" />
-
-            <Button
                 android:id="@+id/btnEliminar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
